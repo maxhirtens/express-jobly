@@ -85,6 +85,14 @@ describe("findAll", function () {
       },
     ]);
   });
+  test("works: filter by minEmployees", async function () {
+    let companies = await Company.findAll({ minEmployees: 3 });
+    expect(companies.length).toEqual(1)
+  });
+  test("works: filter by name", async function () {
+    let companies = await Company.findAll({ name: "c2" });
+    expect(companies.length).toEqual(1)
+  });
 });
 
 /************************************** get */
