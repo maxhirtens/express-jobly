@@ -73,10 +73,6 @@ router.get("/", async function (req, res, next) {
 
 /** GET /[handle]  =>  { company }
  *
- *  Company is { handle, name, description, numEmployees, logoUrl, jobs }
- *   where jobs is [{ id, title, salary, equity }, ...]
- *
- * Authorization required: none
  */
 
 router.get("/:handle", async function (req, res, next) {
@@ -89,12 +85,6 @@ router.get("/:handle", async function (req, res, next) {
 });
 
 /** PATCH /[handle] { fld1, fld2, ... } => { company }
- *
- * Patches company data.
- *
- * fields can be: { name, description, numEmployees, logo_url }
- *
- * Returns { handle, name, description, numEmployees, logo_url }
  *
  * Authorization required: login
  */
